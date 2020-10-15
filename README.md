@@ -1,3 +1,7 @@
+# What is Asadito?
+
+Asadito is an application to organize and document asados and barbecues
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
