@@ -11,10 +11,10 @@ const AsadosForm = ({saveAsado, asadoToEdit}) => {
     const [datetime, setDatetime] = useState(asadoToEdit ? asadoToEdit.date : now.toISOString().split('.')[0])
     const [address, setAddress] = useState(asadoToEdit ? asadoToEdit.address : '')
     const [qty, setQty] = useState(asadoToEdit ? asadoToEdit.qty : 1)
+    const [asadoShoppingList, setAsadoShoppingList] = useState(asadoToEdit ? asadoToEdit.asadoShoppingList : [])
 
     const handleInputChange = (event, setFunction) => {
         setFunction(event.target.value)
-        console.log(event.target.value)
     }
 
     const handleSubmit = e => {
@@ -27,11 +27,13 @@ const AsadosForm = ({saveAsado, asadoToEdit}) => {
             title: title,
             date: datetime,
             address: address,
-            qty: qty
+            qty: qty,
+            asadoShoppingList
         })
     }
 
     return (
+        <>
         <Form className="asados-form" onSubmit={handleSubmit}>
             <FormGroup>
                 <Label for="title">Titulo</Label>
@@ -53,10 +55,11 @@ const AsadosForm = ({saveAsado, asadoToEdit}) => {
                 <Input type="number" name="qty" value={qty} onChange={e => handleInputChange(e, setQty)}></Input>
             </FormGroup>
 
-            <Button type="submit">Guardar</Button>
+            <ShoppingList asadoShoppingList={asadoShoppingList} setAsadoShoppingList={setAsadoShoppingList} qty={qty} />
 
-            <ShoppingList />
+            <Button type="submit" color="primary">Guardar</Button>  
         </Form>
+        </>
     )
 }
 

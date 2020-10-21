@@ -11,7 +11,7 @@ const AsadosReducer = (state = [], action) => {
             })
             return newState
         case actions.REMOVE_ASADO:
-            return state.filter((current) => current.id !== action.payload.id);
+            return state.filter((current) => current.id !== action.payload.id)
         default:
             return state
     }

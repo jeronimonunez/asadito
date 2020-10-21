@@ -59,3 +59,60 @@
             margin-bottom: 0
         h3
             font-size: 16px
+        
+        &-delete
+            
+.shopping-list
+    .form
+        .form-group
+            @extend .d-flex
+            input[name="name"],
+            input[name="price"]
+                @extend .mr-2
+    h4
+        font-size: 16px
+    ul
+        list-style: none
+        padding: 0
+        @extend .mb-3
+        li
+            @extend .d-flex
+            @extend .pl-2
+            @extend .pr-0
+            @extend .pt-2
+            @extend .pb-2
+            @extend .border
+            @extend .border-dark
+
+            div, button
+                // @extend .d-flex
+                flex-direction: row
+            div
+                flex: 1
+                line-height: 1.2rem
+                align-self: center
+                font-size: 18px
+            button
+                border: 0
+                @extend .d-flex
+
+            .price
+                text-align: right
+                font-weight: bold
+
+    .total
+        @extend .mb-5
+        .total-label
+            font-size: 18px
+        .total-nr
+            float: right
+            font-size: 24px
+            font-weight: bold
+            &::before
+                content: "$"
+        .total-divided
+            clear: both
+            display: block
+            width: 100%
+            span
+                float: right

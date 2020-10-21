@@ -8,7 +8,8 @@ export const addAsado = params => {
             date: params.date,
             address: params.address,
             qty: params.qty,
-            id: params.id
+            id: params.id,
+            asadoShoppingList: params.asadoShoppingList
         }
     }
 }
@@ -21,7 +22,8 @@ export const editAsado = params => {
             date: params.date,
             address: params.address,
             qty: params.qty,
-            id: params.id
+            id: params.id,
+            asadoShoppingList: params.asadoShoppingList
         }
     }
 }
