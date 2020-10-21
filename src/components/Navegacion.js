@@ -1,24 +1,36 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {
-    Navbar,
-    NavbarBrand,
-    NavbarText
-  } from 'reactstrap'
+  Button,
+  Navbar,
+  NavbarBrand,
+  NavbarText
+} from 'reactstrap'
 import Logo from '../images/bonfire.svg'
+import { useDispatch } from "react-redux"
+import { setFormVisible, setPage } from "./../store/actions"
 
 const Navegacion = () => {
-    const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
 
-    const toggle = () => setIsOpen(!isOpen)
+  const handleGoHome = e => {
+    e.preventDefault()
+    dispatch(setPage({page: 'home'}))
+    dispatch(setFormVisible(false))
+  }
 
-    return (
-        <Navbar color="light" light expand="md" className="asadito-navbar">
-          <NavbarBrand href="/"><img src={Logo} className="logo" /> Asadito</NavbarBrand>
-          
-          <NavbarText>Simple Text</NavbarText>
-          
-        </Navbar>
-    )
+  const handleGoHelp = e => {
+    e.preventDefault()
+    dispatch(setPage({page: 'ayuda'}))
+  }
+  
+  return (
+    <Navbar color="light" light expand="md" className="asadito-navbar">
+      <NavbarBrand href="/" onClick={handleGoHome}><img src={Logo} className="logo" /> Asadito</NavbarBrand>
+      
+      <Button color="link" onClick={handleGoHelp}>?</Button>
+      <NavbarText>Say hi!</NavbarText>
+    </Navbar>
+  )
 }
-
+  
 export default Navegacion

@@ -26,6 +26,21 @@
     .botonera
         height: 120px
         background-color: $main-bg-color
+        @extend .d-flex
+        flex-direction: row
+        align-items: center
+        button
+            @extend .d-inline
+            @extend .d-flex
+            min-height: 62px
+            align-items: center
+            &.nuevo-asado
+                @extend .ml-3
+                align-self: center
+                img
+                    max-width: 30px
+            .icon-help
+                width: 30px
         
 .asados-form
     @extend .p-3
@@ -116,3 +131,8 @@
             width: 100%
             span
                 float: right
+
+.ayuda
+    @extend .p-3
+    h5
+        border-bottom: 1px solid #838383
