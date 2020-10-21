@@ -5,12 +5,57 @@
     &-navbar
         background-color: $main-bg-color !important
 
-.no-asados
-    @extend .d-flex 
-    @extend .align-content-center 
-    @extend .flex-wrap
+.asados-container
     height: calc(100vh - 60px)
-    div
-        width: 100%
-        h3, p
-            text-align: center
+    flex-direction: column
+    @extend .d-flex 
+    >div
+        @extend .d-flex
+        flex-direction: column
+        justify-content: center
+    .no-asados
+        flex: 1
+        div
+            width: 100%
+            h3, p
+                text-align: center
+    .fs
+        flex: 1
+        justify-content: normal
+
+    .botonera
+        height: 120px
+        background-color: $main-bg-color
+        
+.asados-form
+    @extend .p-3
+
+.asados-list
+    list-style: none
+    margin: 0
+    padding: 0
+    .asado-element
+        border-bottom: 1px solid #efefef
+        @extend .p-3
+
+        @extend .d-flex
+        flex-direction: row
+        .steak-icon
+            float: left
+            width: 50px
+            @extend .d-flex
+            @extend .p-1
+            @extend .mr-3
+        &-content
+            @extend .d-flex
+            flex: 1
+
+            flex-direction: column
+            justify-content: center
+            > *
+                @extend .d-flex
+        h2
+            font-size: 20px
+            margin-bottom: 0
+        h3
+            font-size: 16px
