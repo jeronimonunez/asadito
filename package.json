@@ -13,7 +13,7 @@
     "lint-staged": "^9.5.0",
     "node-sass-chokidar": "^1.4.0",
     "npm-watch": "^0.6.0",
-    "prettier": "^1.19.1",
+    "prettier": "1.19.1",
     "react-axe": "3.5.3",
     "redux-devtools": "^3.7.0",
     "regenerator-runtime": "^0.13.5"
@@ -23,6 +23,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.3",
+    "firebase": "^7.24.0",
     "react": "^16.14.0",
     "react-bootstrap-icons": "^1.0.0",
     "react-dom": "^16.14.0",
